@@ -1,4 +1,4 @@
-package emg.demo.jiact;
+package emg.demo.jiact.cap3;
 
 
 import org.testng.Assert;
@@ -17,7 +17,7 @@ public class FileProcessorTest {
 
         String oneLine = FileProcessor.processFile(BufferedReader::readLine, file.getAbsolutePath());
         Assert.assertEquals(oneLine, "Line1");
-        
+
         String twoLines = FileProcessor.processFile((BufferedReader br) -> br.readLine() + br.readLine(), file.getAbsolutePath());
         Assert.assertEquals(twoLines, "Line1Line2");
     }

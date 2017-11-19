@@ -1,4 +1,4 @@
-package emg.demo.jiact;
+package emg.demo.jiact.cap3;
 
 import java.io.BufferedReader;
 import java.io.IOException;
