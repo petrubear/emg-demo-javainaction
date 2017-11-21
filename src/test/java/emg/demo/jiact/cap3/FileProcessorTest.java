@@ -10,6 +10,7 @@ import java.io.IOException;
 
 
 public class FileProcessorTest {
+
     @Test(enabled = true)
     public void processFile() throws IOException {
         ClassLoader classLoader = getClass().getClassLoader();
@@ -21,4 +22,5 @@ public class FileProcessorTest {
         String twoLines = FileProcessor.processFile((BufferedReader br) -> br.readLine() + br.readLine(), file.getAbsolutePath());
         Assert.assertEquals(twoLines, "Line1Line2");
     }
+
 }

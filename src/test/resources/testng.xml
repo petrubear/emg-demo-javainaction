@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="JavaInActionSuite" verbose="1" >
+    <test name="Cap3"   >
+        <packages>
+            <package name="emg.demo.jiact.cap3" />
+        </packages>
+    </test>
+</suite>
