@@ -1,7 +1,9 @@
 package emg.demo.jiact.cap9;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertTrue;
 
 public class StrategyMainTest {
 
@@ -12,7 +14,7 @@ public class StrategyMainTest {
         var number = "342342";
         var notanumber = "sdfs";
 
-        Assert.assertTrue(strategyMain.validateNumeric(number));
-        Assert.assertFalse(strategyMain.validateNumeric(notanumber));
+        assertTrue(strategyMain.validateNumeric(number));
+        assertFalse(strategyMain.validateNumeric(notanumber));
     }
 }

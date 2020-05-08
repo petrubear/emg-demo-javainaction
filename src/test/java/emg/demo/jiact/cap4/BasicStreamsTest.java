@@ -1,11 +1,13 @@
 package emg.demo.jiact.cap4;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 public class BasicStreamsTest {
 
@@ -19,7 +21,7 @@ public class BasicStreamsTest {
             .map(Dish::getName)
             .limit(3).collect(Collectors.toList());
 
-        Assert.assertEquals(3, highCaloriesVegetrianTop.size());
-        Assert.assertTrue(highCaloriesVegetrianTop.contains("pizza"));
+        assertEquals(3, highCaloriesVegetrianTop.size());
+        assertTrue(highCaloriesVegetrianTop.contains("pizza"));
     }
 }

@@ -8,6 +8,9 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
+
 public class PracticeTest {
     private final Trader raoul = new Trader("Raoul", "Cambridge");
     private final Trader mario = new Trader("Mario", "Milan");
@@ -30,7 +33,7 @@ public class PracticeTest {
             .filter(t -> t.getYear() == 2011)
             .sorted(Comparator.comparing(Transaction::getValue))
             .collect(Collectors.toList());
-        Assert.assertEquals(2, transactions2011.size());
+        assertEquals(2, transactions2011.size());
     }
 
     @Test
@@ -40,7 +43,7 @@ public class PracticeTest {
             .distinct()
             .collect(Collectors.toList());
         cities.forEach(System.out::println);
-        Assert.assertEquals(2, cities.size());
+        assertEquals(2, cities.size());
     }
 
     @Test
@@ -53,7 +56,7 @@ public class PracticeTest {
             .collect(Collectors.toList());
 
         traders.forEach(System.out::println);
-        Assert.assertEquals(3, traders.size());
+        assertEquals(3, traders.size());
     }
 
     @Test
@@ -64,7 +67,7 @@ public class PracticeTest {
             .map(Trader::getName)
             .reduce((a, b) -> a + ", " + b);
 
-        Assert.assertTrue(traders.isPresent());
+        assertTrue(traders.isPresent());
         System.out.println("traders = " + traders.get());
     }
 
@@ -75,7 +78,7 @@ public class PracticeTest {
             .filter(t -> t.getCity().equals("Milan"))
             .findAny();
 
-        Assert.assertTrue(milanTraders.isPresent());
+        assertTrue(milanTraders.isPresent());
         System.out.println("milanTraders = " + milanTraders.get());
     }
 
@@ -86,7 +89,7 @@ public class PracticeTest {
             .map(Transaction::getValue)
             .collect(Collectors.toList());
 
-        Assert.assertEquals(4, cambridgeTransactions.size());
+        assertEquals(4, cambridgeTransactions.size());
 
         cambridgeTransactions.forEach(System.out::println);
     }
@@ -101,8 +104,8 @@ public class PracticeTest {
             .map(Transaction::getValue)
             .reduce(Integer::min);
 
-        highest.ifPresent(integer -> Assert.assertEquals(1000, integer.intValue()));
-        smallest.ifPresent(integer -> Assert.assertEquals(300, integer.intValue()));
+        highest.ifPresent(integer -> assertEquals(1000, integer.intValue()));
+        smallest.ifPresent(integer -> assertEquals(300, integer.intValue()));
 
         System.out.println("smallest = " + smallest);
         System.out.println("highest = " + highest);

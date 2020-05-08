@@ -1,1 +1,1 @@
-Java 8 in action book tests
+Modern Java in action book tests
